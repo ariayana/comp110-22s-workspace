@@ -1,7 +1,7 @@
 """EX01 - Chardle - A cute step toward Wordle."""
 __author__ = "730414608"
 guess_word: str = input("Enter a 5-character word: ")
-if len(guess_word) != 5:
+if len(guess_word) != 5: 
     print("Error: Word must contain 5 characters")
     exit()
 letter: str = input("Enter a single character: ")
