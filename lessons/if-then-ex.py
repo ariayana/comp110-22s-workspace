@@ -2,7 +2,7 @@
 
 choice: int = int(input("Enter a number: "))
 
-# Implent the logic to print
+# Implement the logic to print
 # A when < 25
 # B when >= 25 and < 50
 # C when > 75

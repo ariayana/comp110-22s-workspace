@@ -1,4 +1,4 @@
-"""An exmaple of conditonal (if-else) statments."""
+"""An exmaple of conditonal (if-else) statements."""
 
 SECRET: int = 3
 
