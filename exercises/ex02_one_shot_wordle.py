@@ -6,8 +6,9 @@ secret: str = "python"
 
 six_letter_guess: str = input("What is your 6-letter guess? ")
 
-if len(six_letter_guess) != 6:
-    print("That was not 6 letters! Try again: " + six_letter_guess)
+while len(six_letter_guess) != 6:
+    six_letter_guess: str = input("That was not 6 letters! Try again: ")
+
 
 WHITE_BOX: str = "\U00002B1C"
 YELLOW_BOX: str = "\U0001F7E8"
