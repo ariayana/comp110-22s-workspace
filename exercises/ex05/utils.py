@@ -16,7 +16,6 @@ def only_evens(record: list[int]) -> list[int]:
 
 def sub(name: list[int], start: int, end: int) -> list[int]:
     """Return a subset list from a given list."""
-
     subset_list: list[int] = []
     if len(name) == 0 or start > len(name) or end <= 0:
         return []
