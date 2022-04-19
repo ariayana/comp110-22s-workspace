@@ -8,6 +8,7 @@ __author__ = "730414608"
 
 
 class Simpy:
+    """Creates a new object of typee Simpy."""
     values: list[float]
 
     def __init__(self, a: list[float]):
@@ -25,13 +26,13 @@ class Simpy:
         
         return f"Simpy([{result}])"
 
-    def fill(self, value: float, num: int):
+    def fill(self, value: float, num: int) -> None:
         """After calling this method, the length of the Simpy object's values should be equal to the second argument given to this method."""
         self.values: list[float] = []
         for v in range(0, num):
             self.values.append(value)
     
-    def arange(self, start: float, stop: float, step: float = 1.0):
+    def arange(self, start: float, stop: float, step: float = 1.0) -> None:
         """Purpose: Is to fill in the values attribute with range values, but in terms of floats. Basically putting floats in order from leeast to greatest."""
         assert step != 0.0
         self.values: list[float] = []
@@ -134,12 +135,17 @@ class Simpy:
                     i += 1
         return result
 
-    def __getitem__(self, rhs: int) -> float:
+    def __getitem__(self, rhs: Union[int, list[bool]]) -> Union[float, Simpy]:
         """Gives us the ability to read specific items from the Simpy array."""
-        result: float = 0.0
-        i: int = 0
-        while i < len(self.values):
-            if self.values[i] == rhs:
-                result += self.values[i]
-                i += 1
-        return result
+        if isinstance(rhs, list):
+            result: Simpy = Simpy([])
+            assert len(self.values) == len(rhs)
+            for i in range(0, len(self.values)):
+                if rhs[i]:
+                    result.values.append(self.values[i])
+            return result
+
+        else:
+            r: float = 0.0
+            r += self.values[rhs]
+            return r
